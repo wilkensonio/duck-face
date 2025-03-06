@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.light {
+  background-color: aliceblue;
+  color: black;
+}
+.dark {
+  background-color: black;
+  color: aliceblue;
+}
