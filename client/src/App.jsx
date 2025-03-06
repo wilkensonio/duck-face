@@ -24,7 +24,7 @@ function App() {
       },
       body: JSON.stringify(newQuack),
     });
-    setQuacks(...quacks, newQuack);
+    setQuacks([...quacks, newQuack]);
   };
 
   return (

@@ -4,7 +4,7 @@ import styles from './QuackFeed.module.css';
 function QuackFeed(props) {
   const quackList = props.quacks.map((quack) => (
     <SingleQuack
-      key={quack.quackId}
+      key={quack._id}
       content={quack.content}
       author={quack.author}
     />
