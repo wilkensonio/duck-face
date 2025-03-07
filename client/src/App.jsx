@@ -5,6 +5,8 @@ import Footer from './Footer';
 import QuackFeed from './QuackFeed';
 import NewQuackForm from './NewQuackForm';
 import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
+ 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function App() {
   const [quacks, setQuacks] = useState([]);
@@ -26,58 +28,55 @@ function App() {
       body: JSON.stringify(newQuack),
     });
     setQuacks([...quacks, newQuack]);
-  };
-
-  // return (
-  //   <>
-  //     <Header />
-  //     <div className="row">
-  //       <div className="col-md-8">
-  //         <QuackFeed quacks={quacks} />
-  //       </div>
-  //       <div className="col-md-4">
-  //         <NewQuackForm quacks={quacks} addQuack={addQuack} />
-  //         <LoginForm />
-  //       </div>
-  //     </div>
-  //     <Footer />
-  //   </>
-  // );
+  }; 
+ 
   return (
-    <Router>
-      <Header />
-      <div className="container mt-4">
-        <Routes>
-          {/* Quack Feed Route */}
-          <Route
-            path="/"
-            element={
-              <div className="row">
-                <div className="col ">
-                  <QuackFeed quacks={quacks} />
+    <>
+      <Router>
+        <Header />
+        <div className="container mt-4">
+          <Routes>
+            {/* Quack Feed Route */}
+            <Route
+              path="/"
+              element={
+                <div className="row">
+                  <div className="col ">
+                    <QuackFeed quacks={quacks} />
+                  </div>
+                  <div className="col">
+                    <NewQuackForm quacks={quacks} addQuack={addQuack} />
+                  </div>
                 </div>
-                <div className="col">
-                  <NewQuackForm quacks={quacks} addQuack={addQuack} />
-                </div>
-              </div>
-            }
-          />
+              }
+            />
 
-          {/* Login Route */}
-          <Route
-            path="/login"
-            element={
-              <div className="row">
-                <div className="col ">
-                  <LoginForm />
+            {/* Login Route */}
+            <Route
+              path="/login"
+              element={
+                <div className="row">
+                  <div className="col ">
+                    <LoginForm />
+                  </div>
                 </div>
-              </div>
-            }
-          />
-        </Routes>
-      </div>
-      <Footer />
-    </Router>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <div className="row">
+                  <div className="col ">
+                    <RegisterForm />
+                  </div>
+                </div>
+              }
+            />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
