@@ -6,7 +6,7 @@ import App from './App';
 import '@testing-library/jest-dom';
 
 describe('App Component', () => {
-  test('renders header, footer, and quack feed', async () => {
+  test('renders header, footer, and login', async () => {
     render(<App />);
 
     expect(screen.getByText(/DuckFace/i)).toBeInTheDocument();
