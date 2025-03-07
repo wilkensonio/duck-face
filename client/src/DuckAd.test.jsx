@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import DuckAd from './DuckAd';
+import DuckAd from './DuckAd.test';
 import '@testing-library/jest-dom';
 
 describe('Duck Ad', () => {
